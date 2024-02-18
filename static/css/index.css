@@ -1,0 +1,41 @@
+
+    .header{
+        margin-top:100px;
+        font-size:5em;
+        text-align: center;
+        color:#BA1200;
+        font-weight:700;
+    }
+    
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .status {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .progress,
+    .completed {
+        flex: 1;
+        text-align: center;
+    }
+    
+    .progress h3,
+    .completed h3 {
+        color: #007bff;
+    }
+    
+    .count {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    h3{
+        text-align:center;
+    }

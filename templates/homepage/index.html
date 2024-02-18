@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header %}
+<link rel="stylesheet" href="{% static "css/index.css" %}">
+<style>
+    body{
+        background-image: url('static/images/task.jpg');
+        background-size: cover; /* Adjust as needed */
+        background-repeat: no-repeat; /* Adjust as needed */
+        }
+    </style>
+{% endblock header %}
+
+{% block content %}
+
+<div class="header">Welcome to Task Management</div>
+<div class="container">
+    <h2>Task Status</h2>
+    <div class="status">
+      <div class="completed">
+        <h3>Tasks in Progress</h3>
+        <p class="count">{{inprogress}}</p>
+      </div>
+      <div class="completed">
+        <h3>Tasks Completed</h3>
+        <p class="count">{{completed}}</p>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock content %}
+
+
+
+
+
+
+
+

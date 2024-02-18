@@ -1,0 +1,16 @@
+body{
+    background-color:#fff;
+}
+#navbtn{
+    color:#fff;
+    font-size:1.2em;
+    font-weight:600;
+    margin-left:10px;
+}
+#navbtn:hover{
+    background-color:#fff;
+    color: #BA1200;
+    transition: 0.5s;
+    border-radius:5px;
+
+}

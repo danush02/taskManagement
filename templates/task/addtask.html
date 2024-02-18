@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header %}
+<link rel="stylesheet" href={% static "css/addtask.css" %}>
+
+{% endblock header %}
+
+{% block content %}
+
+<div class="container">
+    <h2>Task Completion Form</h2>
+    <form method="POST">
+        {% csrf_token %}
+      <div class="form-group">
+        <label for="employee">Employee:</label>
+      <select id="employee" name="employee" required>
+        <option value="">Select an employee</option>
+        {% for i in emplist %}
+        <option value="{{i.empname}}">{{i.empname}}</option>
+        {% endfor %}
+        <!-- Add more options as needed -->
+      </select>
+      </div>
+      <div class="form-group">
+        <label for="task">Task:</label>
+        <input type="text" id="task" name="task" required>
+      </div>
+      <div class="form-group">
+        <label for="completion_date">Completion Date:</label>
+        <input type="date" id="completion_date" name="completion_date" required>
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+{% endblock content %}

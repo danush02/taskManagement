@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block header %}
+<link rel="stylesheet" href="{% static "css/viewtask.css" %}">
+
+{% endblock header %}
+
+{% block content %}
+<br><br><br>
+<div class="topsec">
+<h1>View Task</h1>
+<a href={% url "addtask" %} ><button class="btn">Add Task</button></a>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Employee Name</th>
+      <th>Task Assigned</th>
+      <th>Status</th>
+      <th>Task Creation</th>
+      <th>Task Completion</th>
+      <th>Update</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for task in tasks %}
+    <tr>
+      <td>{{task.empname}}</td>
+      <td>{{task.todotask}}</td>
+      {% if task.status == 1 %}
+      <td class="status">In Progress</td>
+      {%else%}
+      <td class="status">Completed</td>
+      {%endif%}
+      <td>{{task.taskcreation}}</td>
+      <td>{{task.taskcompletion}}</td>
+      {% if task.status == 1 %}
+      <td><form method="POST">
+        {% csrf_token %}
+        <button type="submit" value="{{task.taskID}},done" name="updatetask">Done</button>
+        <button type="submit" value="{{task.taskID}},edit" name="updatetask">Edit</button>
+        </form>
+        {%else%}
+        <td class="status">Completed</td>
+        {%endif%}
+      </td>
+    </tr>
+    {%endfor%}
+    <!-- Add more rows as needed -->
+  </tbody>
+</table>
+{% endblock content %}
